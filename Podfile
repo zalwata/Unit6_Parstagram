@@ -7,6 +7,8 @@ target 'Unit5_Parstagram' do
 
   # Pods for Unit5_Parstagram
   pod 'Parse'
+  pod "AlamofireImage"
+
 
   target 'Unit5_ParstagramTests' do
     inherit! :search_paths

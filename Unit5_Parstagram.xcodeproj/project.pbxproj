@@ -19,6 +19,7 @@
 		E65FBF2625FC6CDD00B4E5DE /* Unit5_ParstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FBF2525FC6CDD00B4E5DE /* Unit5_ParstagramUITests.swift */; };
 		E6EFBA6125FC722600966239 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EFBA6025FC722600966239 /* LoginViewController.swift */; };
 		E6EFBA6625FC723C00966239 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EFBA6525FC723C00966239 /* FeedViewController.swift */; };
+		E6EFBA6B25FC7B3B00966239 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EFBA6A25FC7B3B00966239 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E65FBF2725FC6CDD00B4E5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6EFBA6025FC722600966239 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E6EFBA6525FC723C00966239 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		E6EFBA6A25FC7B3B00966239 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		F6C3559D5A78A0047A00F245 /* Pods-Unit5_Parstagram-Unit5_ParstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unit5_Parstagram-Unit5_ParstagramUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unit5_Parstagram-Unit5_ParstagramUITests/Pods-Unit5_Parstagram-Unit5_ParstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 				E65FBF1125FC6CDD00B4E5DE /* Info.plist */,
 				E6EFBA6025FC722600966239 /* LoginViewController.swift */,
 				E6EFBA6525FC723C00966239 /* FeedViewController.swift */,
+				E6EFBA6A25FC7B3B00966239 /* CameraViewController.swift */,
 			);
 			path = Unit5_Parstagram;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6EFBA6125FC722600966239 /* LoginViewController.swift in Sources */,
+				E6EFBA6B25FC7B3B00966239 /* CameraViewController.swift in Sources */,
 				E65FBF0425FC6CDC00B4E5DE /* AppDelegate.swift in Sources */,
 				E6EFBA6625FC723C00966239 /* FeedViewController.swift in Sources */,
 				E65FBF0625FC6CDC00B4E5DE /* SceneDelegate.swift in Sources */,
