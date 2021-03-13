@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,12 +12,13 @@
 		DC49602D62C1DBAE1BA60895 /* Pods_Unit5_ParstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CA13C9F418C8F2C5FEBD15 /* Pods_Unit5_ParstagramTests.framework */; };
 		E65FBF0425FC6CDC00B4E5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FBF0325FC6CDC00B4E5DE /* AppDelegate.swift */; };
 		E65FBF0625FC6CDC00B4E5DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FBF0525FC6CDC00B4E5DE /* SceneDelegate.swift */; };
-		E65FBF0825FC6CDC00B4E5DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FBF0725FC6CDC00B4E5DE /* ViewController.swift */; };
 		E65FBF0B25FC6CDC00B4E5DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65FBF0925FC6CDC00B4E5DE /* Main.storyboard */; };
 		E65FBF0D25FC6CDD00B4E5DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E65FBF0C25FC6CDD00B4E5DE /* Assets.xcassets */; };
 		E65FBF1025FC6CDD00B4E5DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65FBF0E25FC6CDD00B4E5DE /* LaunchScreen.storyboard */; };
 		E65FBF1B25FC6CDD00B4E5DE /* Unit5_ParstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FBF1A25FC6CDD00B4E5DE /* Unit5_ParstagramTests.swift */; };
 		E65FBF2625FC6CDD00B4E5DE /* Unit5_ParstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FBF2525FC6CDD00B4E5DE /* Unit5_ParstagramUITests.swift */; };
+		E6EFBA6125FC722600966239 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EFBA6025FC722600966239 /* LoginViewController.swift */; };
+		E6EFBA6625FC723C00966239 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EFBA6525FC723C00966239 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,6 @@
 		E65FBF0025FC6CDC00B4E5DE /* Unit5_Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unit5_Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65FBF0325FC6CDC00B4E5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E65FBF0525FC6CDC00B4E5DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E65FBF0725FC6CDC00B4E5DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E65FBF0A25FC6CDC00B4E5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E65FBF0C25FC6CDD00B4E5DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E65FBF0F25FC6CDD00B4E5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		E65FBF2125FC6CDD00B4E5DE /* Unit5_ParstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Unit5_ParstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65FBF2525FC6CDD00B4E5DE /* Unit5_ParstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit5_ParstagramUITests.swift; sourceTree = "<group>"; };
 		E65FBF2725FC6CDD00B4E5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6EFBA6025FC722600966239 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E6EFBA6525FC723C00966239 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F6C3559D5A78A0047A00F245 /* Pods-Unit5_Parstagram-Unit5_ParstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unit5_Parstagram-Unit5_ParstagramUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unit5_Parstagram-Unit5_ParstagramUITests/Pods-Unit5_Parstagram-Unit5_ParstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +113,6 @@
 				D4F4093252C90B89E49E566D /* Pods-Unit5_ParstagramTests.debug.xcconfig */,
 				CA9FDF36FB7AD357F938F08F /* Pods-Unit5_ParstagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,11 +143,12 @@
 			children = (
 				E65FBF0325FC6CDC00B4E5DE /* AppDelegate.swift */,
 				E65FBF0525FC6CDC00B4E5DE /* SceneDelegate.swift */,
-				E65FBF0725FC6CDC00B4E5DE /* ViewController.swift */,
 				E65FBF0925FC6CDC00B4E5DE /* Main.storyboard */,
 				E65FBF0C25FC6CDD00B4E5DE /* Assets.xcassets */,
 				E65FBF0E25FC6CDD00B4E5DE /* LaunchScreen.storyboard */,
 				E65FBF1125FC6CDD00B4E5DE /* Info.plist */,
+				E6EFBA6025FC722600966239 /* LoginViewController.swift */,
+				E6EFBA6525FC723C00966239 /* FeedViewController.swift */,
 			);
 			path = Unit5_Parstagram;
 			sourceTree = "<group>";
@@ -407,8 +409,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E65FBF0825FC6CDC00B4E5DE /* ViewController.swift in Sources */,
+				E6EFBA6125FC722600966239 /* LoginViewController.swift in Sources */,
 				E65FBF0425FC6CDC00B4E5DE /* AppDelegate.swift in Sources */,
+				E6EFBA6625FC723C00966239 /* FeedViewController.swift in Sources */,
 				E65FBF0625FC6CDC00B4E5DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
