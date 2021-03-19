@@ -11,6 +11,7 @@ import Parse
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+//    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,7 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.clientKey = "2l7UqerhDHUTtOIxbCFo5P6Fo7ZeoKvpJTK2EAFi";
             $0.server = "https://parseapi.back4app.com";
         }
+        
+//        Parse.initialize(with: ParseClientConfiguration (block: { (configuration: ParseMutableClientConfiguration) -> Void
+//            in
+//            configuration.applicationId = "Parstagram"
+//            confdciguration.server = "https://whispering-stream-51370.herokuapp.com/parse"
+//            })
+//        )
         Parse.initialize(with: parseConfig)
+        
+//        if PFUser.current() != nil {
+//            let main = UIStoryboard(name: "Main", bundle: nil)
+//            let feedNavigationController = main.instantiateViewController(identifier: "FeedNavigationController")
+//
+//
+//
+//            window?.rootViewController = feedNavigationController
+//        }
+        
+        
         
         return true
     }
