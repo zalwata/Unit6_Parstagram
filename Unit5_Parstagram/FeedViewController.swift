@@ -11,6 +11,8 @@ import AlamofireImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var window: UIWindow?
+
     var posts = [PFObject]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,5 +76,23 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func onLogoutButton(_ sender: Any) {
+        
+        PFUser.logOut()
+        self.performSegue(withIdentifier: "logoutSeque", sender: nil)
 
+        
+        
+        
+        
+//        let main = UIStoryboard(name: "Main", bundle: nil)
+//        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+//        
+//        let delegate = UIApplication.shared.delegate as! AppDelegate
+//        delegate.window?.rootViewController = loginViewController
+        
+    }
+    
 }

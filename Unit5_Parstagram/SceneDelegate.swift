@@ -25,6 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let feedNavigationController = main.instantiateViewController(identifier: "FeedNavigationController")
             window?.rootViewController = feedNavigationController
         }
+        
+        if PFUser.isEqual(PFUser.logOut())
+        {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+            window?.rootViewController = loginViewController
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
