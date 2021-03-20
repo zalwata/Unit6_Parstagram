@@ -15,6 +15,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     let commentBar = MessageInputBar()
     var showsCommentBar = false
     var posts = [PFObject]()
+    var selectedPost: PFObject!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,13 +39,25 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
-            
+        let comment = PFObject(className: "Comments")
+        comment["text"] = text
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()
         
+        selectedPost.add(comment, forKey: "comments")
+        selectedPost.saveInBackground{(success, error) in
+            if success {
+                print("Comment saved")
+            } else
+            {
+                print("Error saving comment")
+            }
+        }
+        tableView.reloadData()
         
         commentBar.inputTextView.text = nil
         showsCommentBar = false
         becomeFirstResponder()
-
     }
     
     @objc func keyboardWillBeHidden(note: Notification)
@@ -163,7 +176,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []
         
         if indexPath.row == comments.count + 1
@@ -171,6 +184,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             showsCommentBar = true
             becomeFirstResponder()
             commentBar.inputTextView.becomeFirstResponder()
+            
+            selectedPost = post
         }
         
 //        comment["text"] = "This is a random comment"
