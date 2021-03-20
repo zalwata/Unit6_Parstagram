@@ -197,6 +197,28 @@
                                             <outlet property="nameLabel" destination="FVe-x8-Zhe" id="pQI-Mt-29S"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="az6-Yh-nyh">
+                                        <rect key="frame" x="0.0" y="553.5" width="414" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="az6-Yh-nyh" id="7bD-rY-dpg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egi-q3-vve">
+                                                    <rect key="frame" x="16" y="8" width="134" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="egi-q3-vve" secondAttribute="trailing" constant="8" id="D6B-02-qVg"/>
+                                                <constraint firstItem="egi-q3-vve" firstAttribute="top" secondItem="7bD-rY-dpg" secondAttribute="top" constant="8" id="Hqz-5z-Xqf"/>
+                                                <constraint firstItem="egi-q3-vve" firstAttribute="leading" secondItem="7bD-rY-dpg" secondAttribute="leading" constant="16" id="Ziz-8H-luW"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="egi-q3-vve" secondAttribute="bottom" constant="8" id="dK1-Qj-xqo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

@@ -13,7 +13,7 @@ import MessageInputBar
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let commentBar = MessageInputBar()
-    
+    var showsCommentBar = false
     var posts = [PFObject]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +24,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-
+        tableView.keyboardDismissMode = .interactive
         // Do any additional setup after loading the view.
     }
     
@@ -35,15 +35,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override var canBecomeFirstResponder: Bool
     {
-        return true
+        return showsCommentBar
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         let post = posts[section]
         let comments = (post["comments"] as? [PFObject]) ?? []
-        
-        return comments.count + 1
+        return comments.count + 2
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,7 +84,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.photoView.af_setImage(withURL: url)
 
             return cell
-        } else
+        } else if indexPath.row <= comments.count
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell") as! CommentTableViewCell
 
@@ -98,6 +97,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
             return cell
 
+        } else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+            
+            return cell
         }
     }
     
