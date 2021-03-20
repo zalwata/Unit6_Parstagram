@@ -6,8 +6,9 @@ target 'Unit5_Parstagram' do
   use_frameworks!
 
   # Pods for Unit5_Parstagram
-  pod 'Parse'
+  pod "Parse"
   pod "AlamofireImage"
+  pod "MessageInputBar"
 
 
   target 'Unit5_ParstagramTests' do

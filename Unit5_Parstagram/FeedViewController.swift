@@ -8,12 +8,35 @@
 import UIKit
 import Parse
 import AlamofireImage
+import MessageInputBar
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var window: UIWindow?
-
+    let commentBar = MessageInputBar()
+    
     var posts = [PFObject]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override var inputAccessoryView: UIView?
+    {
+        return commentBar
+    }
+    
+    override var canBecomeFirstResponder: Bool
+    {
+        return true
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -65,10 +88,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell") as! CommentTableViewCell
-//
+
+            //cause error - part 2.4
 //            let comment = comments[indexPath.row - 1]
 //            cell.commentLabel.text = comment["text"] as? String
-
+//
 //            let user = comment["author"] as! PFUser
 //            cell.nameLabel.text = user.username
 
@@ -79,17 +103,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-
-        // Do any additional setup after loading the view.
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
