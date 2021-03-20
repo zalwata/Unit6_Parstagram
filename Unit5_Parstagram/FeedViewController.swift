@@ -10,7 +10,7 @@ import Parse
 import AlamofireImage
 import MessageInputBar
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
     
     let commentBar = MessageInputBar()
     var showsCommentBar = false
@@ -20,6 +20,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentBar.inputTextView.placeholder = "Add a comment..."
+        commentBar.sendButton.title = "Post"
+        commentBar.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,11 +37,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+            
+        
+        
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+
+    }
+    
     @objc func keyboardWillBeHidden(note: Notification)
     {
         commentBar.inputTextView.text = nil
         showsCommentBar = false
         becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
     }
     
     override var inputAccessoryView: UIView?
