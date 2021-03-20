@@ -26,6 +26,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.keyboardDismissMode = .interactive
         // Do any additional setup after loading the view.
+        
+        let center = NotificationCenter.default
+        center.addObserver(self, selector:
+                            #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    @objc func keyboardWillBeHidden(note: Notification)
+    {
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
     }
     
     override var inputAccessoryView: UIView?
