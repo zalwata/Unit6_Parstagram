@@ -89,11 +89,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell") as! CommentTableViewCell
 
             //cause error - part 2.4
-//            let comment = comments[indexPath.row - 1]
-//            cell.commentLabel.text = comment["text"] as? String
-//
-//            let user = comment["author"] as! PFUser
-//            cell.nameLabel.text = user.username
+            let comment = comments[indexPath.row - 1]
+            cell.commentLabel.text = comment["text"] as? String
+
+            let user = comment["author"] as! PFUser
+            cell.nameLabel.text = user.username
 
             return cell
 
@@ -137,18 +137,26 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let post = posts[indexPath.row]
-        let comment = PFObject(className: "Comments")
-        comment["text"] = "This is a random comment"
-        comment["post"] = post
-        comment["author"] = PFUser.current()!
-        post.add(comment, forKey: "comments")
-        post.saveInBackground{(success, error) in
-            if success {
-                print("Comment saved")
-            } else {
-                print("Error saving comment")
-            }
+        let comments = (post["comments"] as? [PFObject]) ?? []
+        
+        if indexPath.row == comments.count + 1
+        {
+            showsCommentBar = true
+            becomeFirstResponder()
+            commentBar.inputTextView.becomeFirstResponder()
         }
+        
+//        comment["text"] = "This is a random comment"
+//        comment["post"] = post
+//        comment["author"] = PFUser.current()!
+//        post.add(comment, forKey: "comments")
+//        post.saveInBackground{(success, error) in
+//            if success {
+//                print("Comment saved")
+//            } else {
+//                print("Error saving comment")
+//            }
+//        }
     }
     
     
